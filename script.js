@@ -1,7 +1,9 @@
 console.log("si funciona");
 //En esta funcion se asigna si es laborable o no.
-function laboral(x){
-    if(x == 0 || x == 6)
+function laboral(x, y){
+    if(y < 1000)
+    document.getElementById("resultado").value = "";
+    else if(x == 0 || x == 6)
     document.getElementById("resultado").value += ", no laborable";
     else if(x > 0 || x < 6)
     document.getElementById("resultado").value += ", es laborable";
@@ -14,7 +16,9 @@ function fechaCompleta(){
     let mes = parseInt(document.getElementById("mes").value)-1;
     let anio = document.getElementById("anio").value;
     const fecha = new Date(anio, mes, dia).getDay();
+    console.log(fecha);
     
+    if(anio > 1000){
     switch(fecha){
         case 0:
             document.getElementById("resultado").value = "Domingo";
@@ -37,6 +41,11 @@ function fechaCompleta(){
         case 6:
             document.getElementById("resultado").value = "Sabado";
             break;
-    }
-    laboral(fecha);
+        default:
+            document.getElementById("resultado").value = "";
+            break;
+        }
+    }else document.getElementById("resultado").value = "";
+
+    laboral(fecha,anio);
 }
