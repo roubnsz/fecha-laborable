@@ -1,8 +1,8 @@
 console.log("si funciona");
 //En esta funcion se asigna si es laborable o no.
 function laboral(x, y){
-    if(y < 1000)
-    document.getElementById("resultado").value = "";
+    if(y < 1000){
+    document.getElementById("resultado").value = "";alert("Faltan datos") ;}
     else if(x == 0 || x == 6)
     document.getElementById("resultado").value += ", no laborable";
     else if(x > 0 || x < 6)
@@ -43,6 +43,7 @@ function fechaCompleta(){
             break;
         default:
             document.getElementById("resultado").value = "";
+            alert("Faltan datos");
             break;
         }
     }else document.getElementById("resultado").value = "";
