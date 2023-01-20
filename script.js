@@ -3,8 +3,10 @@ console.log("si funciona");
 function laboral(x){
     if(x == 0 || x == 6)
     document.getElementById("resultado").value += ", no laborable";
-    else 
+    else if(x > 0 || x < 6)
     document.getElementById("resultado").value += ", es laborable";
+    else
+    document.getElementById("resultado").value = "";
 }
 
 function fechaCompleta(){
